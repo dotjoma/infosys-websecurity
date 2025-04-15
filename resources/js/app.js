@@ -1,3 +1,4 @@
+// for index.php
 document.addEventListener('DOMContentLoaded', function() {
     const animateElements = document.querySelectorAll('.animate');
     
@@ -13,4 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.opacity = 0;
         observer.observe(element);
     });
+});
+
+// for login.php
+document.getElementById('togglePassword').addEventListener('click', function() {
+    const passwordInput = document.getElementById('password');
+    const icon = this.querySelector('i');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    } else {
+        passwordInput.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    }
 });
